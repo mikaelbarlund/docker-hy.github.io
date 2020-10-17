@@ -1,7 +1,11 @@
 version: 2.1
 orbs:
   docker: circleci/docker@1.0.0
+  heroku: circleci/docker@1.0.0
 workflows:
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git
   deploy:
     jobs:
       - docker/publish:
