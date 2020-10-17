@@ -17,3 +17,5 @@ RUN jekyll build
 FROM nginx:alpine
 
 COPY --from=build-stage /usr/src/app/_site/ /usr/share/nginx/html
+
+EXPOSE 80
